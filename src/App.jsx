@@ -14,30 +14,62 @@ export default function FodFilms() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="h-16 flex items-center justify-between">
 
-            <a href="#home" className="flex items-center gap-2 group">
-              <span className="relative inline-block">
-                <span className="pointer-events-none absolute inset-0 rounded-full bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.45)_0%,rgba(212,175,55,0.18)_40%,transparent_70%)] blur-md" />
-                <img
-                  src="/logo-fod-circle.png"
-                  alt="Fód Films logo"
-                  className="relative h-12 w-12 md:h-14 md:w-14 shrink-0 ring-1 ring-white/20 object-contain p-1 bg-neutral-900 rounded-full"
-                />
-              </span>
-            </a>
+           {/* Hero — ember sunset + parallax */}
+<section id="home" className="relative overflow-hidden h-[80vh]">
+  {/* Parallax layer (moves slower than scroll) */}
+  <div
+    className="absolute inset-0 will-change-transform"
+    style={{
+      transform: `translateY(${Math.round((window.scrollY || 0) * -0.15)}px)`,
+      backgroundImage: `
+        linear-gradient(
+          to bottom,
+          rgba(255,196,77,0.28) 0%,
+          rgba(245,158,11,0.22) 22%,
+          rgba(0,0,0,0.00) 60%,
+          rgba(0,0,0,0.45) 100%
+        ),
+        url('/fod-banner.png')
+      `,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center 30%',
+      backgroundRepeat: 'no-repeat',
+    }}
+  />
 
-            <nav className="hidden md:flex items-center gap-6 text-sm text-neutral-300">
-              <a href="#work" className="hover:text-white">Work</a>
-              <a href="#about" className="hover:text-white">About</a>
-              <a href="#services" className="hover:text-white">Services</a>
-              <a href="#contact" className="hover:text-white">Contact</a>
-            </nav>
+  {/* extra gold ember behind the horizon */}
+  <div
+    aria-hidden
+    className="pointer-events-none absolute left-1/2 top-[38%] -translate-x-1/2 -translate-y-1/2 w-[60rem] h-[60rem] rounded-full blur-3xl"
+    style={{
+      background:
+        'radial-gradient(circle at center, rgba(212,175,55,0.22) 0%, rgba(212,175,55,0.10) 35%, transparent 60%)',
+    }}
+  />
 
-            <a href="#contact" className="hidden md:inline-flex items-center rounded-xl bg-white/10 hover:bg-white/15 transition px-4 py-2 text-sm">
-              Start a project
-            </a>
-          </div>
-        </div>
-      </header>
+  {/* subtle film grain */}
+  <div className="absolute inset-0 grain pointer-events-none" />
+
+  {/* Centered headline (optional—remove if you want image only) */}
+  <div className="relative z-10 h-full flex items-end justify-center pb-16 px-4">
+    <div className="text-center max-w-3xl">
+      <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight leading-[1.05]">
+        Cinematic stories with an Irish heartbeat.
+      </h1>
+      <p className="mt-6 text-lg text-neutral-300">
+        Fód Films crafts films, commercials, and branded content rooted in place, people, and purpose.
+      </p>
+      <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="#work" className="inline-flex items-center justify-center rounded-xl bg-amber-400 px-5 py-3 font-medium text-neutral-950 hover:bg-amber-300 transition">
+          See our work
+        </a>
+        <a href="#contact" className="inline-flex items-center justify-center rounded-xl border border-neutral-700 px-5 py-3 font-medium hover:bg-white/5 transition">
+          Get in touch
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Hero */}
       <section id="home" className="relative overflow-hidden">
