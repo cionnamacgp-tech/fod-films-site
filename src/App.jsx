@@ -28,7 +28,7 @@ export default function FodFilms() {
             </a>
           </div>
         </div>
-      </header>
+      </header> 
 
       {/* Hero */}
       <section id="home" className="relative overflow-hidden">
