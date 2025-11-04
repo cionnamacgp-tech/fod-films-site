@@ -1,11 +1,16 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function FodFilms() {
   const [email, setEmail] = useState("");
   const [formName, setFormName] = useState("");
   const [formEmail, setFormEmail] = useState("");
   const [formMessage, setFormMessage] = useState("");
-  const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
+  const [formStatus, setFormStatus] = useState('idle');
+  const [taglineIn, setTaglineIn] = useState(false);
+  useEffect(() => {
+    const t = setTimeout(() => setTaglineIn(true), 100);
+    return () => clearTimeout(t);
+  }, []);
 
   return (
     <div className="min-h-screen bg-neutral-950 text-neutral-100 antialiased">
@@ -46,7 +51,7 @@ export default function FodFilms() {
             <div className="mb-10">
               <img src="/logo-fod-circle.png" alt="Fód Films logo large" className="mx-auto h-40 w-40 md:h-56 md:w-56 object-contain drop-shadow-2xl" />
             </div>
-            <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight leading-[1.05] text-center">Cinematic stories with an Irish heartbeat.</h1>
+            <h1 className={"text-4xl sm:text-6xl font-extrabold tracking-tight leading-[1.05] text-center transform transition-all duration-700 ease-out " + (taglineIn ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2")}>Homegrown Content Rooted in Story</h1>
             <p className="mt-6 text-lg text-neutral-300 text-center">Fód Films crafts films, commercials, and branded content rooted in place, people, and purpose. From concept to final grade, we deliver end-to-end production with care.</p>
             <div className="mt-10 flex flex-col sm:flex-row gap-3">
               <a href="#work" className="inline-flex items-center justify-center rounded-xl bg-amber-400 px-5 py-3 font-medium text-neutral-950 hover:bg-amber-300 transition">
