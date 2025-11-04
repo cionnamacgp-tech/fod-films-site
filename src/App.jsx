@@ -14,7 +14,7 @@ export default function FodFilms() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="h-16 flex items-center justify-between">
             <a href="#home" className="flex items-center gap-2 group">
-              <img src="/logo-fod-circle.svg" alt="Fód Films logo" className="h-8 w-8 rounded-full ring-1 ring-white/20 object-cover bg-neutral-900" />
+              <img src="/logo-fod-circle.png" alt="Fód Films logo" className="h-8 w-8 rounded-full ring-1 ring-white/20 object-cover bg-neutral-900" />
               <span className="text-lg font-semibold tracking-wide group-hover:opacity-90">Fód Films</span>
             </a>
             <nav className="hidden md:flex items-center gap-6 text-sm text-neutral-300">
