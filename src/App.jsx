@@ -90,28 +90,30 @@ export default function FodFilms() {
       </section>
 
       {/* About */}
-      <section id="about" className="border-t border-neutral-800">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="grid md:grid-cols-5 gap-10 items-center">
-            <div className="md:col-span-3">
-              <h2 className="text-2xl sm:text-3xl font-bold">About Fód</h2>
-              <p className="mt-4 text-neutral-300">
-                “Fód” is Gaelic for soil — the ground underfoot. We make films that feel grounded: authentic, human, and visually striking. Our team brings festival‑winning narrative craft to commercial briefs and documentary stories.
-              </p>
-              <ul className="mt-6 grid sm:grid-cols-2 gap-3 text-sm text-neutral-300">
-                <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-amber-400"/> Development & producing</li>
-                <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-amber-400"/> Directing & cinematography</li>
-                <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-amber-400"/> Post: edit, sound, colour</li>
-                <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-amber-400"/> Fixers & production services in Ireland</li>
-              </ul>
-            </div>
-            <div className="md:col-span-2">
-              <img src="/brand-image.png" alt="Fód Films brand" className="w-full h-full object-cover rounded-2xl border border-neutral-800" />
-            </div>
-            </div>
-          </div>
-        </div>
-      </section>
+<section id="about" className="border-t border-neutral-800">
+  <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div className="grid md:grid-cols-5 gap-10 items-center">
+
+      <div className="md:col-span-3">
+        <h2 className="text-2xl sm:text-3xl font-bold">About Fód</h2>
+        <p className="mt-4 text-neutral-300">
+          “Fód” is Gaelic for soil — the ground underfoot. We make films that feel grounded: authentic, human, and visually striking. Our team brings festival-winning narrative craft to commercial briefs and documentary stories.
+        </p>
+        <ul className="mt-6 grid sm:grid-cols-2 gap-3 text-sm text-neutral-300">
+          <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-amber-400"/> Development & producing</li>
+          <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-amber-400"/> Directing & cinematography</li>
+          <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-amber-400"/> Post: edit, sound, colour</li>
+          <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-amber-400"/> Fixers & production services in Ireland</li>
+        </ul>
+      </div>
+
+      <div className="md:col-span-2">
+        <img src="/brand-image.png" alt="Fód Films brand" className="w-full h-full object-cover rounded-2xl border border-neutral-800" />
+      </div>
+
+    </div>
+  </div>
+</section>
 
       {/* Services */}
       <section id="services" className="border-t border-neutral-800">
