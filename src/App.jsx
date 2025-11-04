@@ -106,9 +106,8 @@ export default function FodFilms() {
               </ul>
             </div>
             <div className="md:col-span-2">
-              <div className="aspect-[3/4] rounded-2xl bg-neutral-800 grid place-items-center text-neutral-500">
-                Company / set photo
-              </div>
+              <img src="/brand-image.png" alt="Fód Films brand" className="w-full h-full object-cover rounded-2xl border border-neutral-800" />
+            </div>
             </div>
           </div>
         </div>
@@ -135,7 +134,7 @@ export default function FodFilms() {
       </section>
 
       {/* Newsletter / CTA */}
-      <section className="border-t border-neutral-800">
+      <section id="contact" className="border-t border-neutral-800">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="rounded-2xl border border-neutral-800 p-6 bg-gradient-to-br from-neutral-900 to-neutral-900/40">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-5">
@@ -147,7 +146,7 @@ export default function FodFilms() {
               onSubmit={async (e) => {
                 e.preventDefault();
                 setFormStatus('sending');
-                const form = e.currentTarget as HTMLFormElement;
+                const form = e.currentTarget;
                 try {
                   const resp = await fetch('https://formspree.io/f/xdkprbln', {
                     method: 'POST',
@@ -206,8 +205,9 @@ export default function FodFilms() {
           <div className="flex flex-col sm:flex-row gap-4 items-center justify-between">
             <p>© {new Date().getFullYear()} Fód Films. All rights reserved.</p>
             <div className="flex items-center gap-4">
-              <a href="#" className="hover:text-neutral-200">Privacy</a>
-              <a href="#" className="hover:text-neutral-200">Credits</a>
+              <a href="mailto:cionnamacgp@gmail.com" className="hover:text-neutral-200">Email</a>
+              <a href="https://www.instagram.com/fod_films/?hl=en" target="_blank" rel="noreferrer" className="hover:text-neutral-200">Instagram</a>
+              <a href="https://www.imdb.com/name/nm5270848/?ref_=fn_all_nme_2" target="_blank" rel="noreferrer" className="hover:text-neutral-200">IMDb</a>
             </div>
           </div>
         </div>
