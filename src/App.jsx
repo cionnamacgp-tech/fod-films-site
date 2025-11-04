@@ -101,7 +101,7 @@ export default function FodFilms() {
             <div className="md:col-span-3">
               <h2 className="text-2xl sm:text-3xl font-bold">About Fód</h2>
               <p className="mt-4 text-neutral-300">
-                “Fód” is Gaelic for soil — the ground underfoot. We make films that feel grounded: authentic, human, and visually striking. Our team brings festival‑winning narrative craft to commercial briefs and documentary stories.
+                “Fód” is Gaelic for soil — the ground underfoot. We make films that feel grounded: authentic, human, and visually striking. Our team brings festival-winning narrative craft to commercial briefs and documentary stories.
               </p>
               <ul className="mt-6 grid sm:grid-cols-2 gap-3 text-sm text-neutral-300">
                 <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-amber-400"/> Development & producing</li>
@@ -112,7 +112,6 @@ export default function FodFilms() {
             </div>
             <div className="md:col-span-2">
               <img src="/brand-image.png" alt="Fód Films brand" className="w-full h-full object-cover rounded-2xl border border-neutral-800" />
-            </div>
             </div>
           </div>
         </div>
