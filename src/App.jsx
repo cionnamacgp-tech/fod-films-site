@@ -53,37 +53,38 @@ export default function FodFilms() {
       </header>
 
       
-     {/* Hero — full-width banner (image only, no text) */}
-{/* Hero */}
+     {/* Hero — banner image only */}
 <section id="home" className="relative overflow-hidden">
-
-  {/* Background image */}
-  <div className="absolute inset-0">
-    <img
-      src="/hero/hero-desktop.webp"
-      alt="Fód Films roots hero"
-      className="w-full h-full object-cover object-bottom md:object-center"
-      style={{ maxHeight: "90vh" }}
+  <picture>
+    <source srcSet="/hero/hero-desktop.webp" media="(min-width: 768px)" />
+    <img 
+      src="/hero/hero-mobile.webp"
+      alt="Fód Films — roots banner"
+      className="w-full h-[75vh] sm:h-[90vh] object-cover object-bottom"
     />
-    <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/10 to-black/70" />
-  </div>
+  </picture>
 
-  {/* Hero content */}
-  <div className="relative z-10 flex flex-col items-center text-center px-4 sm:px-6 lg:px-8 pt-[22vh] pb-[20vh]">
-    <h1
-      className={`text-4xl sm:text-6xl font-extrabold tracking-tight leading-[1.05] transition-all duration-700 ease-out ${
+  {/* subtle top fade to avoid "cut edge" */}
+  <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/70 pointer-events-none"></div>
+</section>
+
+{/* Text block below hero */}
+<section className="bg-neutral-950 text-center py-20 border-b border-neutral-900">
+  <div className="max-w-3xl mx-auto px-4">
+    <h1 
+      className={`text-4xl sm:text-6xl font-extrabold leading-[1.05] transition-all duration-700 ${
         taglineIn ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
       }`}
-      style={{ color: "white" }}
     >
       Fód Films
     </h1>
 
-    <p className="mt-4 text-lg sm:text-xl text-neutral-200 max-w-xl" style={{ color: "white" }}>
-      Rooted in Story<br />Cinematic stories with a heartbeat
+    <p className="mt-4 text-lg sm:text-xl text-neutral-300 max-w-xl mx-auto">
+      Rooted in Story<br />
+      Cinematic stories with a heartbeat
     </p>
 
-    <div className="mt-10 flex flex-col sm:flex-row gap-3">
+    <div className="mt-10 flex flex-col sm:flex-row gap-3 justify-center">
       <a 
         href="#work"
         className="inline-flex items-center justify-center rounded-xl bg-amber-400 px-5 py-3 font-medium text-neutral-950 hover:bg-amber-300 transition"
