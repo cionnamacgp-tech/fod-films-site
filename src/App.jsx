@@ -56,48 +56,47 @@ export default function FodFilms() {
      {/* Hero — full-width banner (image only, no text) */}
 <section id="home" className="relative overflow-hidden">
 
-  {/* Hero Image */}
-  <picture>
-    <source
-      srcSet="/hero/hero-desktop.webp"
-      media="(min-width: 768px)"
-      type="image/webp"
-    />
-    <img
-      src="/hero/hero-mobile.webp"
-      alt="Fód Films — tree and roots at dusk"
-      className="
-        w-full
-        h-[85vh] sm:h-[92vh]
-        object-contain sm:object-cover
-        object-[50%_60%] sm:object-[50%_65%] 
-        select-none pointer-events-none
-        animate-roots
-      "
-      draggable="false"
-      loading="eager"
-      fetchpriority="high"
-    />
-  </picture>
-
-  {/* Ember sky glow */}
-  <div className="absolute inset-0 pointer-events-none"
+  {/* Background dusk glow */}
+  <div
+    className="absolute inset-0 z-0 dusk-soft pointer-events-none"
     style={{
       background: `
         radial-gradient(
-          circle at 50% 25%,
-          rgba(255,160,60,0.45) 0%,
-          rgba(255,130,40,0.28) 22%,
-          rgba(120,60,20,0.18) 38%,
-          rgba(0,0,0,0.85) 95%
+          circle at 50% 20%,
+          rgba(120,140,180,0.45) 0%,
+          rgba(50,70,110,0.22) 35%,
+          rgba(10,20,35,0.18) 55%,
+          rgba(0,0,0,0.92) 92%
         )
       `
     }}
   />
 
-  {/* Bottom fade to black */}
-  <div className="absolute bottom-0 w-full h-[45vh] bg-gradient-to-b from-transparent to-black/95 pointer-events-none"></div>
+  {/* Film grain */}
+  <div className="grain absolute inset-0 z-0 opacity-[0.15] pointer-events-none" />
+  
+  {/* Banner image */}
+  <img
+    src="/hero/fod-banner.webp"
+    alt="Fód Films — roots visual"
+    className="relative z-[1] w-full h-[65vh] object-cover object-center sm:object-bottom"
+    style={{ maskImage: "linear-gradient(to bottom, black 88%, transparent 100%)" }}
+  />
+
+  {/* Text layer — ALWAYS TOP */}
+  <div className="relative z-[3] max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-32 pb-32 text-center flex flex-col items-center">
+
+    <h1 className="text-4xl sm:text-6xl font-bold text-white">
+      Fód Films
+    </h1>
+
+    <p className="mt-4 text-lg sm:text-xl text-neutral-300 max-w-xl">
+      Rooted in story — crafted with care.
+    </p>
+
+  </div>
 </section>
+
 
 
 
