@@ -60,7 +60,7 @@ export default function FodFilms() {
     <img 
       src="/hero/hero-mobile.webp"
       alt="Fód Films — roots banner"
-      className="w-full h-[75vh] sm:h-[90vh] object-cover object-bottom"
+      className="w-full h-[75vh] sm:h-[90vh] object-cover object-[40%_bottom]"
     />
   </picture>
 
