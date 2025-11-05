@@ -67,7 +67,7 @@ export default function FodFilms() {
       w-full h-[75vh] sm:h-[90vh]
       object-cover
       object-[30%_bottom]      /* mobile left shift */
-      sm:object-[60%_bottom]   /* desktop right shift */
+      sm:object-[70%_bottom]   /* desktop right shift */
     "
   />
 </picture>
