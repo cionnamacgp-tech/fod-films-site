@@ -56,17 +56,21 @@ export default function FodFilms() {
      {/* Hero — full-width banner (image only, no text) */}
 <section id="home" className="relative overflow-hidden">
 
-  {/* Image */}
+  {/* Hero Image */}
   <picture>
-    <source srcSet="/hero/hero-desktop.webp" media="(min-width: 640px)" type="image/webp" />
+    <source
+      srcSet="/hero/hero-desktop.webp"
+      media="(min-width: 768px)"
+      type="image/webp"
+    />
     <img
       src="/hero/hero-mobile.webp"
-      alt="Fód Films — tree and roots in dusk light"
+      alt="Fód Films — tree and roots at dusk"
       className="
-        w-full 
-        h-[70vh] sm:h-[80vh] 
-        object-cover 
-        object-[50%_88%] sm:object-[50%_83%]
+        w-full
+        h-[85vh] sm:h-[92vh]
+        object-contain sm:object-cover
+        object-[50%_60%] sm:object-[50%_65%] 
         select-none pointer-events-none
         animate-roots
       "
@@ -76,25 +80,25 @@ export default function FodFilms() {
     />
   </picture>
 
-  {/* Ember sky glow (no text bleed) */}
-  <div className="absolute inset-0 pointer-events-none mix-blend-screen opacity-[0.65]"
+  {/* Ember sky glow */}
+  <div className="absolute inset-0 pointer-events-none"
     style={{
       background: `
-        radial-gradient(circle at 50% 28%, rgba(255,165,60,0.32) 0%, rgba(255,130,40,0.12) 22%, rgba(0,0,0,0) 55%)
+        radial-gradient(
+          circle at 50% 25%,
+          rgba(255,160,60,0.45) 0%,
+          rgba(255,130,40,0.28) 22%,
+          rgba(120,60,20,0.18) 38%,
+          rgba(0,0,0,0.85) 95%
+        )
       `
     }}
   />
 
-  {/* Gentle darkness to fade into site */}
-  <div className="absolute inset-0 pointer-events-none mix-blend-multiply"
-    style={{
-      background: `
-        linear-gradient(to bottom, rgba(0,0,0,0) 60%, rgba(0,0,0,0.75) 100%)
-      `
-    }}
-  />
-
+  {/* Bottom fade to black */}
+  <div className="absolute bottom-0 w-full h-[45vh] bg-gradient-to-b from-transparent to-black/95 pointer-events-none"></div>
 </section>
+
 
 
       {/* Hero copy — separate from image to keep text crisp */}
