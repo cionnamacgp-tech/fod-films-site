@@ -54,50 +54,27 @@ export default function FodFilms() {
 
       
      {/* Hero — full-width banner (image only, no text) */}
+{/* Hero */}
 <section id="home" className="relative overflow-hidden">
 
-  {/* Background dusk glow */}
-  <div
-    className="absolute inset-0 z-0 dusk-soft pointer-events-none"
-    style={{
-      background: `
-        radial-gradient(
-          circle at 50% 20%,
-          rgba(120,140,180,0.45) 0%,
-          rgba(50,70,110,0.22) 35%,
-          rgba(10,20,35,0.18) 55%,
-          rgba(0,0,0,0.92) 92%
-        )
-      `
-    }}
-  />
-
-  {/* Film grain */}
-  <div className="grain absolute inset-0 z-0 opacity-[0.15] pointer-events-none" />
-  
-  {/* Banner image */}
-  <img
-    src="/hero/fod-banner.webp"
-    alt="Fód Films — roots visual"
-    className="relative z-[1] w-full h-[65vh] object-cover object-center sm:object-bottom"
-    style={{ maskImage: "linear-gradient(to bottom, black 88%, transparent 100%)" }}
-  />
-
-  {/* Text layer — ALWAYS TOP */}
-  <div className="relative z-[3] max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-32 pb-32 text-center flex flex-col items-center">
-
-    <h1 className="text-4xl sm:text-6xl font-bold text-white">
-      Fód Films
-    </h1>
-
-    <p className="mt-4 text-lg sm:text-xl text-neutral-300 max-w-xl">
-      Rooted in story — crafted with care.
-    </p>
-
+  {/* Background image */}
+  <div className="absolute inset-0">
+    <img
+      src="/hero/hero-desktop.webp"
+      alt="Fód Films roots hero"
+      className="w-full h-full object-cover object-bottom md:object-center"
+      style={{ maxHeight: "90vh" }}
+    />
+    {/* Subtle dark fade for text clarity */}
+    <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/10 to-black/70" />
   </div>
-</section>
 
+  {/* Content */}
+  <div className="relative z-10 flex flex-col items-center text-center px-4 sm:px-6 lg:px-8 pt-[22vh] pb-[20vh]">
 
+    {/* Title */}
+    <h1 
+      classN
 
 
       {/* Hero copy — separate from image to keep text crisp */}
