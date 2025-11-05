@@ -1,6 +1,11 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 export default function FodFilms() {
+  const [taglineIn, setTaglineIn] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => setTaglineIn(true), 300); 
+  }, []);
   const [email, setEmail] = useState("");
   const [formName, setFormName] = useState("");
   const [formEmail, setFormEmail] = useState("");
@@ -38,66 +43,55 @@ export default function FodFilms() {
         </div>
       </header>
 
-      {/* Hero */}
-      <section id="home" className="relative overflow-hidden min-h-[60vh] flex items-center justify-center">
-        <div className="absolute inset-0 bg-[radial-gradient(60%_50%_at_50%_0%,rgba(212,175,55,0.25),transparent)]" />
-        {/* Gold ember circle (background only) */}
-        <div aria-hidden className="pointer-events-none absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 w-[42rem] h-[42rem] rounded-full bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.18)_0%,rgba(212,175,55,0.08)_35%,transparent_60%)] blur-2xl" />
-        {/* Hero content: logo only, perfectly centered on mobile */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="max-w-3xl mx-auto flex flex-col items-center text-center">
-            <img src="/logo-fod-circle.png" alt="Fód Films" className="mx-auto h-40 w-40 md:h-56 md:w-56 object-contain drop-shadow-2xl" />
-          </div>
-        </div>
-      </section>
+ {/* Hero */}
+<section id="home" className="relative overflow-hidden">
 
-      {/* Tagline block (kept separate so it never overlaps hero) */}
-      <section className="border-t border-neutral-900/60">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 text-center opacity-0 translate-y-4 transition-all duration-700 ease-out animate-fadein-tagline">
-          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight">Rooted in Story</h1>
-          <p className="mt-5 text-lg text-neutral-300">Fód Films crafts documentaries and films rooted in place, people, and purpose. Cinematic stories with a heartbeat</p>
-        </div>
-      </section>
+  {/* ember glow behind logo only */}
+  <div className="absolute inset-0 bg-neutral-950" />
+  <div className="absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 w-[42rem] h-[42rem] rounded-full bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.2)_0%,rgba(212,175,55,0.05)_35%,transparent_65%)] blur-3xl" />
 
-      <style>{`
-        @keyframes fadeinTagline {
-          0% { opacity: 0; transform: translateY(12px); }
-          100% { opacity: 1; transform: translateY(0); }
-        }
-        .animate-fadein-tagline {
-          animation: fadeinTagline 1.2s ease-out forwards;
-          animation-delay: .2s;
-        }
-      `}</style>
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-32 relative z-10 flex flex-col items-center text-center">
 
-      {/* Showcase / Work */}
-      <section id="work" className="border-t border-neutral-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="flex items-end justify-between gap-6 mb-10">
-            <div>
-              <h2 className="text-2xl sm:text-3xl font-bold">Selected work</h2>
-              <p className="text-neutral-400 mt-1">A few recent pieces. Swap in your stills or posters.</p>
-            </div>
-            <a href="#contact" className="text-sm text-amber-400 hover:text-amber-300">View IMDb profile →</a>
-          </div>
+    {/* Hero logo */}
+    <img 
+      src="/logo-fod-circle.png"
+      alt="Fód Films logo"
+      className="h-40 w-40 sm:h-56 sm:w-56 object-contain drop-shadow-2xl mb-8 animate-fadeInSlow"
+    />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[1,2,3,4,5,6].map((i) => (
-              <article key={i} className="group rounded-2xl overflow-hidden border border-neutral-800 bg-neutral-900/30">
-                <div className="aspect-[16/9] bg-neutral-800 relative">
-                  <div className="absolute inset-0 grid place-items-center text-neutral-500">
-                    <span className="text-sm">Project still {i}</span>
-                  </div>
-                </div>
-                <div className="p-4">
-                  <h3 className="font-semibold">Title of Project {i}</h3>
-                  <p className="text-sm text-neutral-400">Short logline or brand • 2025</p>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+    {/* headline text */}
+    <h1 
+      className={`text-4xl sm:text-6xl font-extrabold tracking-tight leading-[1.05] transition-all duration-700 ease-out ${
+        taglineIn ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
+      }`}
+    >
+      Rooted in Story
+    </h1>
+
+    {/* tagline */}
+    <p className="mt-4 text-lg text-neutral-300 max-w-xl animate-fadeInSlow delay-200">
+      Fód Films crafts documentaries and films rooted in place, people, and purpose. 
+      Cinematic stories with a heartbeat.
+    </p>
+
+    {/* buttons */}
+    <div className="mt-10 flex flex-col sm:flex-row gap-3 animate-fadeInSlow delay-300">
+      <a 
+        href="#work" 
+        className="inline-flex items-center justify-center rounded-xl bg-amber-400 px-5 py-3 font-medium text-neutral-950 hover:bg-amber-300 transition"
+      >
+        See our work
+      </a>
+      <a 
+        href="#contact" 
+        className="inline-flex items-center justify-center rounded-xl border border-neutral-700 px-5 py-3 font-medium hover:bg-white/5 transition"
+      >
+        Get in touch
+      </a>
+    </div>
+  </div>
+</section>
+       
 
       {/* About */}
       <section id="about" className="border-t border-neutral-800">
