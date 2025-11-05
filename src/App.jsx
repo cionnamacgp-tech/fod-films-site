@@ -54,47 +54,43 @@ export default function FodFilms() {
 
       
      {/* Hero — full-width banner (image only, no text) */}
-      <section id="home" className="relative overflow-hidden">
-        <picture>
-          {/* modern, efficient WebP sources */}
-          <source srcSet="/hero/fod-hero-ember@3840.webp" media="(min-width: 1280px)" type="image/webp" />
-          <source srcSet="/hero/fod-hero-ember@2560.webp" media="(min-width: 1024px)" type="image/webp" />
-          <source srcSet="/hero/fod-hero-ember@1280.webp" media="(min-width: 640px)" type="image/webp" />
-          <source srcSet="/hero/fod-hero-ember@1024.webp" type="image/webp" />
+<section id="home" className="relative overflow-hidden">
+  <picture>
+    {/* Desktop first, then mobile fallback */}
+    <source srcSet="/hero/hero-desktop.webp" media="(min-width: 640px)" type="image/webp" />
+    <img
+      src="/hero/hero-mobile.webp"
+      alt="Fód Films — tree and roots motif in subtle ember dusk"
+      className="
+        w-full h-[66vh] sm:h-[78vh]
+        object-cover
+        /* keep the roots in frame */
+        object-[50%_85%] sm:object-center
+        select-none pointer-events-none
+      "
+      draggable="false"
+      loading="eager"
+      fetchpriority="high"
+    />
+  </picture>
 
-          {/* fallback JPG (or PNG) */}
-          <img
-            src="/fod-banner.png" /* swap to /hero/fod-hero-ember@3840.jpg when ready */
-            alt="Fód Films — tree and roots motif in subtle ember dusk"
-            className="
-              w-full h-[66vh] sm:h-[78vh]
-              object-cover
-              /* keep the roots in frame (adjust if needed) */
-              object-[50%_85%] sm:object-[50%_80%]
-              select-none pointer-events-none
-            "
-            draggable="false"
-            loading="eager"
-            fetchpriority="high"
-          />
-        </picture>
+  {/* Subtle depth (does not tint live text below) */}
+  <div
+    className="pointer-events-none absolute inset-0"
+    style={{
+      background:
+        "linear-gradient(to bottom, rgba(0,0,0,0.14) 0%, rgba(0,0,0,0.08) 35%, rgba(0,0,0,0.00) 65%)",
+    }}
+  />
+  <div
+    className="pointer-events-none absolute inset-0 mix-blend-multiply"
+    style={{
+      background:
+        "radial-gradient(120% 90% at 50% 50%, rgba(0,0,0,0) 55%, rgba(0,0,0,0.14) 100%)",
+    }}
+  />
+</section>
 
-        {/* subtle depth, no tinting on text (image-only section) */}
-         <div
-          className="pointer-events-none absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.08) 35%, rgba(0,0,0,0.00) 65%)",
-          }}
-        />
-         <div
-          className="pointer-events-none absolute inset-0 mix-blend-multiply"
-          style={{
-            background:
-              "radial-gradient(120% 90% at 50% 50%, rgba(0,0,0,0) 55%, rgba(0,0,0,0.14) 100%)",
-          }}
-        />
-      </section>
 
       {/* Hero copy — separate from image to keep text crisp */}
       <section className="border-t border-neutral-900/60">
