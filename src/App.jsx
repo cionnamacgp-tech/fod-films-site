@@ -52,37 +52,66 @@ export default function FodFilms() {
         </div>
       </header>
 
-      {/* Hero */}
+      {
+     {/* Hero — full-width banner (image only, no text) */}
       <section id="home" className="relative overflow-hidden">
-        {/* ember glow behind logo only */}
-        <div className="absolute inset-0 bg-neutral-950" />
-        <div className="absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 w-[42rem] h-[42rem] rounded-full bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.2)_0%,rgba(212,175,55,0.05)_35%,transparent_65%)] blur-3xl" />
+        <picture>
+          {/* modern, efficient WebP sources */}
+          <source srcSet="/hero/fod-hero-ember@3840.webp" media="(min-width: 1280px)" type="image/webp" />
+          <source srcSet="/hero/fod-hero-ember@2560.webp" media="(min-width: 1024px)" type="image/webp" />
+          <source srcSet="/hero/fod-hero-ember@1280.webp" media="(min-width: 640px)" type="image/webp" />
+          <source srcSet="/hero/fod-hero-ember@1024.webp" type="image/webp" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-32 relative z-10 flex flex-col items-center text-center">
-          {/* Logo */}
+          {/* fallback JPG (or PNG) */}
           <img
-            src="/logo-fod-circle.png"
-            alt="Fód Films logo"
-            className="h-40 w-40 sm:h-56 sm:w-56 object-contain drop-shadow-2xl mb-8 animate-fadeInSlow"
+            src="/fod-banner.png" /* swap to /hero/fod-hero-ember@3840.jpg when ready */
+            alt="Fód Films — tree and roots motif in subtle ember dusk"
+            className="
+              w-full h-[66vh] sm:h-[78vh]
+              object-cover
+              /* keep the roots in frame (adjust if needed) */
+              object-[50%_85%] sm:object-[50%_80%]
+              select-none pointer-events-none
+            "
+            draggable="false"
+            loading="eager"
+            fetchpriority="high"
           />
+        </picture>
 
-          {/* Headline */}
+        {/* subtle depth, no tinting on text (image-only section) */}
+         <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.08) 35%, rgba(0,0,0,0.00) 65%)",
+          }}
+        />
+         <div
+          className="pointer-events-none absolute inset-0 mix-blend-multiply"
+          style={{
+            background:
+              "radial-gradient(120% 90% at 50% 50%, rgba(0,0,0,0) 55%, rgba(0,0,0,0.14) 100%)",
+          }}
+        />
+      </section>
+
+      {/* Hero copy — separate from image to keep text crisp */}
+      <section className="border-t border-neutral-900/60">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 text-center">
           <h1
-            className={`text-4xl sm:text-6xl font-extrabold tracking-tight leading-[1.05] transition-all duration-700 ease-out ${
-              taglineIn ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
-            }`}
+            className={
+              "text-4xl sm:text-6xl font-extrabold tracking-tight leading-[1.05] transition-all duration-700 ease-out " +
+              (taglineIn ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2")
+            }
           >
             Rooted in Story
           </h1>
-
-          {/* Subline */}
-          <p className="mt-4 text-lg text-neutral-300 max-w-xl animate-fadeInSlow delay-200">
+          <p className="mt-5 text-lg text-neutral-300 max-w-2xl mx-auto animate-fadeInSlow">
             Fód Films crafts documentaries and films rooted in place, people, and purpose.
             Cinematic stories with a heartbeat.
           </p>
-
-          {/* Buttons */}
-          <div className="mt-10 flex flex-col sm:flex-row gap-3 animate-fadeInSlow delay-300">
+          <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center animate-fadeInSlow">
             <a
               href="#work"
               className="inline-flex items-center justify-center rounded-xl bg-amber-400 px-5 py-3 font-medium text-neutral-950 hover:bg-amber-300 transition"
@@ -95,41 +124,6 @@ export default function FodFilms() {
             >
               Get in touch
             </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Work */}
-      <section id="work" className="border-t border-neutral-800">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <h2 className="text-3xl sm:text-5xl font-bold mb-12">Work</h2>
-
-          {/* Showreel placeholder (paste sat here) */}
-          <div className="mb-8 rounded-2xl border border-neutral-800 bg-neutral-900/40 p-6 text-center">
-            <p className="text-neutral-300">
-              🎬 <span className="font-medium">Showreel</span> — coming soon.
-              <span className="text-neutral-500">
-                {" "}We’re cutting a new reel that captures the heartbeat of our work.
-              </span>
-            </p>
-          </div>
-
-          {/* Replace these cards with real projects when ready */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[1, 2, 3, 4, 5, 6].map((i) => (
-              <article
-                key={i}
-                className="group rounded-2xl overflow-hidden border border-neutral-800 bg-neutral-900/30"
-              >
-                <div className="aspect-[16/9] bg-neutral-800 grid place-items-center text-neutral-500">
-                  <span>Project still {i}</span>
-                </div>
-                <div className="p-4">
-                  <h3 className="font-semibold">Project {i}</h3>
-                  <p className="text-sm text-neutral-400">2025</p>
-                </div>
-              </article>
-            ))}
           </div>
         </div>
       </section>
