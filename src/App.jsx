@@ -55,18 +55,20 @@ export default function FodFilms() {
       
      {/* Hero — full-width banner (image only, no text) */}
 <section id="home" className="relative overflow-hidden">
+
+  {/* Image */}
   <picture>
-    {/* Desktop first, then mobile fallback */}
     <source srcSet="/hero/hero-desktop.webp" media="(min-width: 640px)" type="image/webp" />
     <img
       src="/hero/hero-mobile.webp"
-      alt="Fód Films — tree and roots motif in subtle ember dusk"
+      alt="Fód Films — tree and roots in dusk light"
       className="
-        w-full h-[66vh] sm:h-[78vh]
-        object-cover
-        /* keep the roots in frame */
-        object-[50%_85%] sm:object-center
+        w-full 
+        h-[70vh] sm:h-[80vh] 
+        object-cover 
+        object-[50%_88%] sm:object-[50%_83%]
         select-none pointer-events-none
+        animate-roots
       "
       draggable="false"
       loading="eager"
@@ -74,21 +76,24 @@ export default function FodFilms() {
     />
   </picture>
 
-  {/* Subtle depth (does not tint live text below) */}
-  <div
-    className="pointer-events-none absolute inset-0"
+  {/* Ember sky glow (no text bleed) */}
+  <div className="absolute inset-0 pointer-events-none mix-blend-screen opacity-[0.65]"
     style={{
-      background:
-        "linear-gradient(to bottom, rgba(0,0,0,0.14) 0%, rgba(0,0,0,0.08) 35%, rgba(0,0,0,0.00) 65%)",
+      background: `
+        radial-gradient(circle at 50% 28%, rgba(255,165,60,0.32) 0%, rgba(255,130,40,0.12) 22%, rgba(0,0,0,0) 55%)
+      `
     }}
   />
-  <div
-    className="pointer-events-none absolute inset-0 mix-blend-multiply"
+
+  {/* Gentle darkness to fade into site */}
+  <div className="absolute inset-0 pointer-events-none mix-blend-multiply"
     style={{
-      background:
-        "radial-gradient(120% 90% at 50% 50%, rgba(0,0,0,0) 55%, rgba(0,0,0,0.14) 100%)",
+      background: `
+        linear-gradient(to bottom, rgba(0,0,0,0) 60%, rgba(0,0,0,0.75) 100%)
+      `
     }}
   />
+
 </section>
 
 
