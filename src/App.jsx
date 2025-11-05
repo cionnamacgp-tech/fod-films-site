@@ -53,62 +53,69 @@ export default function FodFilms() {
       </header>
 
       
-     {/* Hero — banner image only */}
-<section id="home" className="relative overflow-hidden">
- <picture>
-  <source 
-    srcSet="/hero/hero-desktop.webp" 
-    media="(min-width: 768px)"
-  />
-  <img 
-    src="/hero/hero-mobile.webp"
-    alt="Fód Films — roots banner"
-    className="
-      w-full h-[75vh] sm:h-[90vh]
-      object-cover
-      object-[30%_bottom]      /* mobile left shift */
-      sm:object-[70%_bottom]   /* desktop right shift */
-    "
-  />
-</picture>
+     {/* Hero — full image, crisp text */}
+<section id="home" className="relative overflow-hidden bg-black">
 
+  <picture>
+    <source 
+      srcSet="/hero/hero-desktop.webp"
+      media="(min-width: 768px)"
+    />
+    <img 
+      src="/hero/hero-mobile.webp"
+      alt="Fód Films — roots banner"
+      className="
+        w-full
+        max-h-[92vh]
+        object-contain
+        bg-black
+        
+        pt-8 sm:pt-16
 
-  {/* subtle top fade to avoid "cut edge" */}
-  <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/70 pointer-events-none"></div>
-</section>
+        /* Frame control */
+        object-[70%_100%]      /* mobile — shift LEFT to show roots */
+        sm:object-[35%_100%]   /* desktop — shift RIGHT to center tree */
 
-{/* Text block below hero */}
-<section className="bg-neutral-950 text-center py-20 border-b border-neutral-900">
-  <div className="max-w-3xl mx-auto px-4">
+        -translate-y-2 sm:-translate-y-3
+      "
+    />
+  </picture>
+
+  {/* Soft fade so top edge isn't visible */}
+  <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/70 pointer-events-none"></div>
+
+  {/* Hero text */}
+  <div className="absolute inset-0 flex flex-col justify-end items-center pb-10 text-center pointer-events-none">
+
     <h1 
-      className={`text-4xl sm:text-6xl font-extrabold leading-[1.05] transition-all duration-700 ${
+      className={`text-white text-5xl sm:text-7xl font-extrabold tracking-tight transition-all duration-700 ease-out ${
         taglineIn ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
       }`}
     >
-      Fód Films
+      Rooted in Story
     </h1>
 
-    <p className="mt-4 text-lg sm:text-xl text-neutral-300 max-w-xl mx-auto">
-      Rooted in Story<br />
-      Cinematic stories with a heartbeat
+    <p
+      className="mt-4 text-white max-w-xl text-lg sm:text-xl transition-all duration-700 delay-200 ease-out"
+      style={{ 
+        opacity: taglineIn ? 1 : 0,
+        transform: taglineIn ? "translateY(0)" : "translateY(6px)"
+      }}
+    >
+      Fód Films crafts documentaries and films rooted in place, people, and purpose.  
+      Cinematic stories with a heartbeat.
     </p>
 
-    <div className="mt-10 flex flex-col sm:flex-row gap-3 justify-center">
-      <a 
-        href="#work"
-        className="inline-flex items-center justify-center rounded-xl bg-amber-400 px-5 py-3 font-medium text-neutral-950 hover:bg-amber-300 transition"
-      >
-        See our work
-      </a>
-      <a 
-        href="#contact"
-        className="inline-flex items-center justify-center rounded-xl border border-neutral-700 px-5 py-3 font-medium hover:bg-white/5 transition"
-      >
-        Get in touch
-      </a>
+    <div
+      className="mt-6 text-white/70 text-xs tracking-wide uppercase"
+      style={{ opacity: taglineIn ? 1 : 0, transition: "opacity .8s ease .4s" }}
+    >
+      Scroll ↓
     </div>
+
   </div>
 </section>
+
 
       {/* Contact */}
       <section id="contact" className="border-t border-neutral-800">
