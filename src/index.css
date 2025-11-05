@@ -19,3 +19,13 @@ html, body, #root { height: 100%; }
 
 /* Helps Safari/iOS compositing for transforms */
 .will-change-transform { transform: translateZ(0); }
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(8px); }
+ 100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeInSlow {
+  animation: fadeInUp 1.2s ease forwards;
+  opacity: 0;
+}
