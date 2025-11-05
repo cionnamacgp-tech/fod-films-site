@@ -52,7 +52,7 @@ export default function FodFilms() {
         </div>
       </header>
 
-      {
+      
      {/* Hero — full-width banner (image only, no text) */}
       <section id="home" className="relative overflow-hidden">
         <picture>
