@@ -65,69 +65,40 @@ export default function FodFilms() {
       className="w-full h-full object-cover object-bottom md:object-center"
       style={{ maxHeight: "90vh" }}
     />
-    {/* Subtle dark fade for text clarity */}
     <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/10 to-black/70" />
   </div>
 
-  {/* Content */}
+  {/* Hero content */}
   <div className="relative z-10 flex flex-col items-center text-center px-4 sm:px-6 lg:px-8 pt-[22vh] pb-[20vh]">
+    <h1
+      className={`text-4xl sm:text-6xl font-extrabold tracking-tight leading-[1.05] transition-all duration-700 ease-out ${
+        taglineIn ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
+      }`}
+      style={{ color: "white" }}
+    >
+      Fód Films
+    </h1>
 
-    {/* Title */}
-    <h1 
-      classN
+    <p className="mt-4 text-lg sm:text-xl text-neutral-200 max-w-xl" style={{ color: "white" }}>
+      Rooted in Story<br />Cinematic stories with a heartbeat
+    </p>
 
-
-      {/* Hero copy — separate from image to keep text crisp */}
-      <section className="border-t border-neutral-900/60">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 text-center">
-          <h1
-            className={
-              "text-4xl sm:text-6xl font-extrabold tracking-tight leading-[1.05] transition-all duration-700 ease-out " +
-              (taglineIn ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2")
-            }
-          >
-            Rooted in Story
-          </h1>
-          <p className="mt-5 text-lg text-neutral-300 max-w-2xl mx-auto animate-fadeInSlow">
-            Fód Films crafts documentaries and films rooted in place, people, and purpose.
-            Cinematic stories with a heartbeat.
-          </p>
-          <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center animate-fadeInSlow">
-            <a
-              href="#work"
-              className="inline-flex items-center justify-center rounded-xl bg-amber-400 px-5 py-3 font-medium text-neutral-950 hover:bg-amber-300 transition"
-            >
-              See our work
-            </a>
-            <a
-              href="#contact"
-              className="inline-flex items-center justify-center rounded-xl border border-neutral-700 px-5 py-3 font-medium hover:bg-white/5 transition"
-            >
-              Get in touch
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Services */}
-      <section id="services" className="border-t border-neutral-800">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <h2 className="text-2xl sm:text-3xl font-bold">Services</h2>
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              { title: "Commercial & Branded", desc: "High-impact campaigns, product films, and social content end-to-end." },
-              { title: "Documentary", desc: "Character-led non-fiction with intimacy and craft." },
-              { title: "Narrative", desc: "Shorts and features developed with writers and partners." },
-            ].map((card, idx) => (
-              <div key={idx} className="rounded-2xl border border-neutral-800 p-6 bg-neutral-900/40">
-                <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-amber-400 to-amber-600 mb-4" />
-                <h3 className="font-semibold">{card.title}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{card.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+    <div className="mt-10 flex flex-col sm:flex-row gap-3">
+      <a 
+        href="#work"
+        className="inline-flex items-center justify-center rounded-xl bg-amber-400 px-5 py-3 font-medium text-neutral-950 hover:bg-amber-300 transition"
+      >
+        See our work
+      </a>
+      <a 
+        href="#contact"
+        className="inline-flex items-center justify-center rounded-xl border border-neutral-700 px-5 py-3 font-medium hover:bg-white/5 transition"
+      >
+        Get in touch
+      </a>
+    </div>
+  </div>
+</section>
 
       {/* Contact */}
       <section id="contact" className="border-t border-neutral-800">
