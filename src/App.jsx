@@ -52,8 +52,7 @@ export default function FodFilms() {
         </div>
       </header>
 
-      
-     {/* Hero — use baked ember image only */}
+    {/* Hero — baked ember image */}
 <section id="home" className="relative overflow-hidden bg-black">
   <picture>
     <source
@@ -68,23 +67,55 @@ export default function FodFilms() {
         max-h-[92vh]
         object-contain
         bg-black
-
         pt-8 sm:pt-16
         -translate-y-2 sm:-translate-y-3
-
-        /* frame position */
-        object-[72%_100%]      /* mobile: shift LEFT to reveal roots */
-        sm:object-[32%_100%]   /* desktop: shift RIGHT to center tree */
+        object-[72%_100%] sm:object-[32%_100%]
       "
       draggable="false"
       loading="eager"
       fetchpriority="high"
     />
   </picture>
-
-  {/* No ember overlays here — image already has the color */}
 </section>
 
+{/* Hero text block BELOW the image */}
+<section className="bg-neutral-950 text-center py-20 border-b border-neutral-900">
+  <div className="max-w-3xl mx-auto px-4">
+    <h1
+      className={`text-4xl sm:text-6xl font-extrabold text-white leading-[1.05] transition-all duration-700 ease-out ${
+        taglineIn ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
+      }`}
+    >
+      Rooted in Story
+    </h1>
+
+    <p
+      className="mt-4 text-lg sm:text-xl text-neutral-300 max-w-xl mx-auto transition-all duration-700 delay-200 ease-out"
+      style={{
+        opacity: taglineIn ? 1 : 0,
+        transform: taglineIn ? "translateY(0)" : "translateY(6px)",
+      }}
+    >
+      Fód Films crafts documentaries and films rooted in place, people, and purpose.  
+      Cinematic stories with a heartbeat.
+    </p>
+
+    <div className="mt-10 flex flex-col sm:flex-row gap-3 justify-center">
+      <a
+        href="#work"
+        className="inline-flex items-center justify-center rounded-xl bg-amber-400 px-5 py-3 font-medium text-neutral-950 hover:bg-amber-300 transition"
+      >
+        See our work
+      </a>
+      <a
+        href="#contact"
+        className="inline-flex items-center justify-center rounded-xl border border-neutral-700 px-5 py-3 font-medium hover:bg-white/5 transition"
+      >
+        Get in touch
+      </a>
+    </div>
+  </div>
+</section>
 
 
       {/* Contact */}
