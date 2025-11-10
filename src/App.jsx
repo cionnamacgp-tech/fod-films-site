@@ -201,4 +201,10 @@ export default function FodFilms() {
                       body: new FormData(form),
                     });
                     if (resp.ok) {
-                      setFormStatus("sent"
+                      setFormStatus("sent");
+                      setFormName("");
+                      setFormEmail("");
+                      setFormMessage("");
+                   } else {
+                     setFormStatus("error");
+                   }
