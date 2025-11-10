@@ -56,6 +56,7 @@ export default function FodFilms() {
      {/* Hero — full image, crisp text */}
 <section id="home" className="relative overflow-hidden bg-black">
 
+  {/* Banner image */}
   <picture>
     <source 
       srcSet="/hero/hero-desktop.webp"
@@ -69,34 +70,37 @@ export default function FodFilms() {
         max-h-[92vh]
         object-contain
         bg-black
-        
         pt-8 sm:pt-16
 
-        /* Frame control */
-        object-[70%_100%]      /* mobile — shift LEFT to show roots */
-        sm:object-[35%_100%]   /* desktop — shift RIGHT to center tree */
+        /* framing */
+        object-[75%_100%]       /* mobile: push LEFT */
+        sm:object-[30%_100%]    /* desktop: push RIGHT */
 
         -translate-y-2 sm:-translate-y-3
       "
     />
   </picture>
 
-  {/* Soft fade so top edge isn't visible */}
-  <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/70 pointer-events-none"></div>
+  {/* Subtle ember glow in the sky */}
+  <div className="absolute inset-0 bg-gradient-to-b from-[#d49332]/40 via-transparent to-black/80 pointer-events-none mix-blend-screen"></div>
+
+  {/* Gentle top fade for cinematic depth */}
+  <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60 pointer-events-none"></div>
 
   {/* Hero text */}
-  <div className="absolute inset-0 flex flex-col justify-end items-center pb-10 text-center pointer-events-none">
+  <div className="absolute inset-0 flex flex-col justify-end items-center pb-16 sm:pb-20 text-center pointer-events-none">
 
     <h1 
-      className={`text-white text-5xl sm:text-7xl font-extrabold tracking-tight transition-all duration-700 ease-out ${
+      className={`text-white text-4xl sm:text-6xl font-extrabold tracking-tight leading-[1.05] transition-all duration-700 ease-out ${
         taglineIn ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
       }`}
+      style={{ marginBottom: "0.25rem" }} // fine tune vertical
     >
       Rooted in Story
     </h1>
 
     <p
-      className="mt-4 text-white max-w-xl text-lg sm:text-xl transition-all duration-700 delay-200 ease-out"
+      className="mt-2 text-white max-w-xl text-lg sm:text-xl transition-all duration-700 delay-200 ease-out"
       style={{ 
         opacity: taglineIn ? 1 : 0,
         transform: taglineIn ? "translateY(0)" : "translateY(6px)"
