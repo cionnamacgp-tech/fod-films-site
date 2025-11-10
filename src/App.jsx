@@ -51,64 +51,64 @@ export default function FodFilms() {
         </div>
       </header>
 
-      {/* Hero — banner image only */}
-      <section id="home" className="relative overflow-hidden">
-        <picture>
-          <source 
-            srcSet="/hero/hero-desktop.webp" 
-            media="(min-width: 768px)"
-          />
-          <img 
-            src="/hero/hero-mobile.webp"
-            alt="Fód Films — roots banner"
-            className="
-              w-full
-              max-h-[90vh]
-              object-contain
-              bg-black
-              pt-8 sm:pt-16
-              -translate-y-2 sm:-translate-y-4
-              object-[center_bottom] sm:object-[center_bottom]
-            "
-          />
-        </picture>
+     {/* Hero — ember version */}
+<section id="home" className="relative overflow-hidden bg-black">
+  <picture>
+    <source 
+      srcSet="/hero/hero-desktop-ember.webp" 
+      media="(min-width: 768px)"
+    />
+    <img 
+      src="/hero/hero-mobile-ember.webp"
+      alt="Fód Films — roots in ember light"
+      className="
+        w-full
+        max-h-[90vh]
+        object-contain
+        bg-black
 
-        {/* subtle top fade */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/70 pointer-events-none"></div>
-      </section>
+        pt-10 sm:pt-20
+        -translate-y-2 sm:-translate-y-4
 
-      {/* Hero text below image */}
-      <section className="bg-neutral-950 text-center py-20 border-b border-neutral-900">
-        <div className="max-w-3xl mx-auto px-4">
-          <h1 
-            className={`text-4xl sm:text-6xl font-extrabold leading-[1.05] transition-all duration-700 ${
-              taglineIn ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
-            }`}
-          >
-            Fód Films
-          </h1>
+        object-[60%_bottom]    /* mobile — shift slightly left */
+        sm:object-[45%_bottom] /* desktop — shift slightly right */
+      "
+    />
+  </picture>
 
-          <p className="mt-4 text-lg sm:text-xl text-neutral-300 max-w-xl mx-auto">
-            Rooted in Story<br />
-            Cinematic stories with a heartbeat
-          </p>
+  {/* fade overlay to soften sky and roots */}
+  <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/80 pointer-events-none"></div>
 
-          <div className="mt-10 flex flex-col sm:flex-row gap-3 justify-center">
-            <a 
-              href="#work"
-              className="inline-flex items-center justify-center rounded-xl bg-amber-400 px-5 py-3 font-medium text-neutral-950 hover:bg-amber-300 transition"
-            >
-              See our work
-            </a>
-            <a 
-              href="#contact"
-              className="inline-flex items-center justify-center rounded-xl border border-neutral-700 px-5 py-3 font-medium hover:bg-white/5 transition"
-            >
-              Get in touch
-            </a>
-          </div>
-        </div>
-      </section>
+  {/* Hero text (overlayed) */}
+  <div className="absolute inset-0 flex flex-col justify-end items-center pb-16 text-center">
+    <h1 
+      className={`text-white text-4xl sm:text-6xl font-extrabold tracking-tight transition-all duration-700 ease-out ${
+        taglineIn ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
+      }`}
+    >
+      Rooted in Story
+    </h1>
+
+    <p 
+      className="mt-3 text-white/90 max-w-xl text-lg sm:text-xl transition-all duration-700 delay-200 ease-out"
+      style={{
+        opacity: taglineIn ? 1 : 0,
+        transform: taglineIn ? "translateY(0)" : "translateY(6px)",
+      }}
+    >
+      Fód Films crafts documentaries and films rooted in place, people, and purpose. 
+      Cinematic stories with a heartbeat.
+    </p>
+
+    <div 
+      className="mt-6 text-white/60 text-xs tracking-wide uppercase"
+      style={{ opacity: taglineIn ? 1 : 0, transition: "opacity .8s ease .4s" }}
+    >
+      Scroll ↓
+    </div>
+  </div>
+</section>
+
 
       {/* About (short) */}
       <section id="about" className="border-b border-neutral-900 bg-neutral-950">
