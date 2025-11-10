@@ -133,43 +133,6 @@ export default function FodFilms() {
 </section>
 
 
-
-      {/* About (short) */}
-      <section id="about" className="border-b border-neutral-900 bg-neutral-950">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="grid md:grid-cols-5 gap-8 items-start">
-            <div className="md:col-span-3">
-              <h2 className="text-2xl sm:text-4xl font-bold">About Fód Films</h2>
-              <p className="mt-4 text-neutral-300 text-lg">
-                <strong>Fód</strong> means sod in Irish — the ground beneath us. It reflects what we value:
-                strong foundations, deep roots, and stories grown from something real. We look closely,
-                listen deeply, and allow stories to reveal themselves rather than forcing them into a frame.
-              </p>
-              <p className="mt-4 text-neutral-300">
-                With patience, honesty and craft, we shape films that feel felt, not forced — work that
-                honours real lives and finds meaning where others might not look.
-              </p>
-              <div className="mt-6">
-                <a href="/about" className="inline-flex items-center rounded-xl border border-neutral-700 px-4 py-2 text-sm hover:bg-white/5">
-                  Learn more
-                </a>
-              </div>
-            </div>
-
-            <div className="md:col-span-2">
-              <img
-                src="/ken-headshot.jpg"
-                alt="Ken Mac Giolla Phádraig — Director"
-                className="w-full h-auto rounded-2xl border border-neutral-800 object-cover"
-              />
-              <p className="mt-3 text-xs text-neutral-500">
-                Ken Mac Giolla Phádraig — Director · Producer · Editor
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Services */}
       <section id="services" className="border-t border-neutral-800">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
