@@ -53,72 +53,38 @@ export default function FodFilms() {
       </header>
 
       
-     {/* Hero — full image, crisp text */}
+     {/* Hero — use baked ember image only */}
 <section id="home" className="relative overflow-hidden bg-black">
-
-  {/* Banner image */}
   <picture>
-    <source 
-      srcSet="/hero/hero-desktop.webp"
+    <source
+      srcSet="/hero/hero-desktop-ember.webp"
       media="(min-width: 768px)"
     />
-    <img 
-      src="/hero/hero-mobile.webp"
-      alt="Fód Films — roots banner"
+    <img
+      src="/hero/hero-mobile-ember.webp"
+      alt="Fód Films — tree, ember sky, and roots"
       className="
         w-full
         max-h-[92vh]
         object-contain
         bg-black
+
         pt-8 sm:pt-16
-
-        /* framing */
-        object-[75%_100%]       /* mobile: push LEFT */
-        sm:object-[30%_100%]    /* desktop: push RIGHT */
-
         -translate-y-2 sm:-translate-y-3
+
+        /* frame position */
+        object-[72%_100%]      /* mobile: shift LEFT to reveal roots */
+        sm:object-[32%_100%]   /* desktop: shift RIGHT to center tree */
       "
+      draggable="false"
+      loading="eager"
+      fetchpriority="high"
     />
   </picture>
 
-  {/* Subtle ember glow in the sky */}
-  <div className="absolute inset-0 bg-gradient-to-b from-[#d49332]/40 via-transparent to-black/80 pointer-events-none mix-blend-screen"></div>
-
-  {/* Gentle top fade for cinematic depth */}
-  <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60 pointer-events-none"></div>
-
-  {/* Hero text */}
-  <div className="absolute inset-0 flex flex-col justify-end items-center pb-16 sm:pb-20 text-center pointer-events-none">
-
-    <h1 
-      className={`text-white text-4xl sm:text-6xl font-extrabold tracking-tight leading-[1.05] transition-all duration-700 ease-out ${
-        taglineIn ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
-      }`}
-      style={{ marginBottom: "0.25rem" }} // fine tune vertical
-    >
-      Rooted in Story
-    </h1>
-
-    <p
-      className="mt-2 text-white max-w-xl text-lg sm:text-xl transition-all duration-700 delay-200 ease-out"
-      style={{ 
-        opacity: taglineIn ? 1 : 0,
-        transform: taglineIn ? "translateY(0)" : "translateY(6px)"
-      }}
-    >
-      Fód Films crafts documentaries and films rooted in place, people, and purpose.  
-      Cinematic stories with a heartbeat.
-    </p>
-
-    <div
-      className="mt-6 text-white/70 text-xs tracking-wide uppercase"
-      style={{ opacity: taglineIn ? 1 : 0, transition: "opacity .8s ease .4s" }}
-    >
-      Scroll ↓
-    </div>
-
-  </div>
+  {/* No ember overlays here — image already has the color */}
 </section>
+
 
 
       {/* Contact */}
