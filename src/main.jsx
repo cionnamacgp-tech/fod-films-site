@@ -1,10 +1,15 @@
-import React from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import FodFilms from "./App.jsx";        // your homepage component
+import AboutPage from "./AboutPage.jsx"; // your long bio page
+import "./index.css";
 
-createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-)
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<FodFilms />} />
+      <Route path="/about" element={<AboutPage />} />
+    </Routes>
+  </BrowserRouter>
+);
