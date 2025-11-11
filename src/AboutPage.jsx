@@ -75,21 +75,44 @@ export default function AboutPage() {
         )}
       </header>
 
+      {/* Ember background intro (uses hero-mobile-ember colors) */}
+      <section className="relative overflow-hidden mb-16">
+        <div className="absolute inset-0">
+          <img
+            src="/hero/hero-mobile-ember.webp"
+            alt="Ember background"
+            className="w-full h-full object-cover opacity-60 blur-[40px] scale-110"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/50 to-neutral-950/90" />
+        </div>
+        <div className="relative z-10 py-24 text-center px-4 sm:px-6">
+          <h1 className="text-4xl sm:text-6xl font-extrabold text-white mb-6 drop-shadow-lg">
+            About Fód Films
+          </h1>
+          <p className="text-lg sm:text-xl text-neutral-200 max-w-2xl mx-auto">
+            Rooted in story. Grounded in truth. Grown from something real.
+          </p>
+        </div>
+      </section>
 
-
+      {/* About content */}
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-24 font-serif leading-relaxed">
         <p className="text-neutral-300 text-lg">
           Fód means sod in Irish — the ground beneath us. It reflects what we value:
-          strong foundations, deep connections, and stories grown from something real.
+          strong foundations, deep roots, and stories grown from something real.
         </p>
+
         <p className="mt-6 text-neutral-300 text-lg">
-          Fód Films is a story-driven production company rooted in human connection.
-          We believe the most powerful stories don’t shout — they grow. We look closely,
-          listen deeply, and allow stories to reveal themselves rather than forcing them into a frame.
+          Fód Films is a story-driven production company rooted in human connection. We believe the most powerful
+          stories don’t shout — they grow. We look closely, listen deeply, and allow stories to reveal themselves
+          rather than forcing them into a frame.
         </p>
+
         <p className="mt-6 text-neutral-300 text-lg">
           With patience, honesty and craft, we shape films that feel felt, not forced — work that honours real lives,
           pays attention to the moments in between, and finds meaning where others might not look.
         </p>
+
         <blockquote className="mt-8 italic text-neutral-400 border-l-2 border-amber-400 pl-4">
           We don’t build stories. We listen, and they reveal themselves.
         </blockquote>
@@ -98,7 +121,7 @@ export default function AboutPage() {
         <div className="mt-20 grid md:grid-cols-5 gap-8 items-start">
           <div className="md:col-span-2">
             <img
-              src="/Ken-headshot.jpg"
+              src="/ken-headshot.jpg"
               alt="Ken Mac Giolla Phádraig — Director"
               className="w-full h-auto rounded-2xl border border-neutral-800 object-cover"
             />
@@ -167,7 +190,7 @@ export default function AboutPage() {
             Contact
           </a>
         </div>
-      </main>
+      </div>
     </div>
   );
 }
