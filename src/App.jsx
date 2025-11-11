@@ -134,12 +134,13 @@ export default function FodFilms() {
     </p>
 
     <div className="mt-10 flex flex-col sm:flex-row gap-3 justify-center">
-      <a 
-        href="/work"
-        className="inline-flex items-center justify-center rounded-xl bg-amber-400 px-5 py-3 font-medium text-neutral-950 hover:bg-amber-300 transition"
-      >
-        See our work
-      </a>
+     <a 
+  href="/work"
+  className="inline-flex items-center justify-center rounded-xl bg-amber-400 px-5 py-3 font-medium text-neutral-950 hover:bg-amber-300 transition"
+>
+  See our work
+</a>
+
       <a 
         href="#contact"
         className="inline-flex items-center justify-center rounded-xl border border-neutral-700 px-5 py-3 font-medium hover:bg-white/5 transition"
