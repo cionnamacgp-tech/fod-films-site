@@ -42,28 +42,30 @@ export default function AboutPage() {
 
       {/* Page content */}
       <main className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24 font-serif leading-relaxed">
-       {/* Ember background intro */}
-<section className="relative rounded-2xl overflow-hidden mb-16">
-  {/* blurred background image from hero */}
+      {/* Ember background intro */}
+<section className="relative overflow-hidden mb-16">
+  {/* blurred hero image as background */}
   <div className="absolute inset-0">
     <img
       src="/hero/hero-mobile-ember.webp"
       alt="Ember background"
-      className="w-full h-full object-cover opacity-30 blur-[60px] scale-110"
+      className="w-full h-full object-cover opacity-60 blur-[40px] scale-110"
     />
-    <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-neutral-950/95" />
+    {/* lighter overlay so color shines through */}
+    <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/50 to-neutral-950/90" />
   </div>
 
   {/* content */}
   <div className="relative z-10 py-24 text-center px-4 sm:px-6">
-    <h1 className="text-4xl sm:text-6xl font-extrabold text-white mb-6">
+    <h1 className="text-4xl sm:text-6xl font-extrabold text-white mb-6 drop-shadow-lg">
       About Fód Films
     </h1>
-    <p className="text-lg sm:text-xl text-neutral-300 max-w-2xl mx-auto">
+    <p className="text-lg sm:text-xl text-neutral-200 max-w-2xl mx-auto">
       Rooted in story. Grounded in truth. Grown from something real.
     </p>
   </div>
 </section>
+
 
 
 
