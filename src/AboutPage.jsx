@@ -73,7 +73,7 @@ export default function AboutPage() {
           <Reveal delay={50}>
             <div className="md:col-span-2">
               <img
-                src="/ken-headshot.jpg"
+                src="/Ken-headshot.jpg"
                 alt="Ken Mac Giolla Phádraig — Director"
                 className="w-full h-auto rounded-2xl border border-neutral-800 object-cover"
               />
