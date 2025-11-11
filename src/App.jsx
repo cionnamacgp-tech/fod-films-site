@@ -8,6 +8,9 @@ export default function FodFilms() {
     return () => clearTimeout(t);
   }, []);
 
+  // Mobile menu toggle
+  const [mobileOpen, setMobileOpen] = useState(false);
+
   // CONTACT form state
   const [formName, setFormName] = useState("");
   const [formEmail, setFormEmail] = useState("");
