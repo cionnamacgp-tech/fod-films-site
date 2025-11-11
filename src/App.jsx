@@ -94,19 +94,20 @@ export default function FodFilms() {
       <section id="home" className="relative overflow-hidden">
         <picture>
           <source srcSet="/hero/hero-desktop-ember.webp" media="(min-width: 768px)" />
-         <img
+        <img
   src="/hero/hero-desktop-ember.webp"
   alt="Fód Films — roots banner"
   className="
     w-full
     max-h-[90vh]
-    object-cover
+    object-contain          /* less zoom than cover */
     bg-black
-    pt-8 sm:pt-16
-    -translate-y-2 sm:-translate-y-4
-    object-[40%_bottom]   /* shifts image LEFT on desktop */
+    pt-8 sm:pt-12
+    -translate-y-2 sm:-translate-y-2
+    object-[center_bottom]  /* re-centers horizon and roots */
   "
 />
+
 
         </picture>
         {/* top/bottom fade so edges look natural */}
