@@ -31,8 +31,13 @@ function Reveal({ children, delay = 0 }) {
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-neutral-950 text-neutral-100 antialiased">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24 font-serif leading-relaxed">
+  <div className="min-h-screen bg-neutral-950 text-neutral-100 antialiased">
+    {/* Shared Navbar */}
+    <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-neutral-950/70 bg-neutral-950/90 border-b border-neutral-800">
+      ...
+    </header>
+
+    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24 font-serif leading-relaxed">
 
         <Reveal>
           <h1 className="text-3xl sm:text-5xl font-bold mb-10">About Fód Films</h1>
