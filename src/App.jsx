@@ -20,11 +20,13 @@ export default function FodFilms() {
   return (
     <div className="min-h-screen bg-neutral-950 text-neutral-100 antialiased">
       {/* Navbar */}
-     <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-neutral-950/70 bg-neutral-950/90 border-b border-neutral-800">
+    import { Link } from "react-router-dom";
+
+<header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-neutral-950/70 bg-neutral-950/90 border-b border-neutral-800">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div className="h-16 flex items-center justify-between">
       {/* Logo / Brand */}
-      <a href="/" className="flex items-center gap-2 group">
+      <Link to="/" className="flex items-center gap-2 group">
         <span className="relative inline-block">
           <span className="pointer-events-none absolute inset-0 rounded-full bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.45)_0%,rgba(212,175,55,0.18)_40%,transparent_70%)] blur-md" />
           <img
@@ -36,13 +38,12 @@ export default function FodFilms() {
         <span className="text-lg font-semibold tracking-wide text-white mix-blend-exclusion group-hover:opacity-90">
           Fód Films
         </span>
-      </a>
+      </Link>
 
       {/* Desktop Nav */}
       <nav className="hidden md:flex items-center gap-6 text-sm text-neutral-300">
-        {/* Use /#anchors so they work from any page */}
-        <a href="/#work" className="hover:text-white">Work</a>
-        <a href="/about" className="hover:text-white">About</a>
+        <Link to="/work" className="hover:text-white">Work</Link>
+        <Link to="/about" className="hover:text-white">About</Link>
         <a href="/#services" className="hover:text-white">Services</a>
         <a href="/#contact" className="hover:text-white">Contact</a>
       </nav>
@@ -61,7 +62,6 @@ export default function FodFilms() {
         aria-label="Open menu"
         onClick={() => setMobileOpen((v) => !v)}
       >
-        {/* burger icon */}
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5 text-neutral-200">
           <path fillRule="evenodd" d="M3.75 6.75h16.5v1.5H3.75v-1.5Zm0 4.5h16.5v1.5H3.75v-1.5Zm0 4.5h16.5v1.5H3.75v-1.5Z" clipRule="evenodd" />
         </svg>
@@ -69,13 +69,13 @@ export default function FodFilms() {
     </div>
   </div>
 
-  {/* Mobile menu panel */}
+  {/* Mobile Menu */}
   {mobileOpen && (
     <div className="md:hidden border-t border-neutral-800 bg-neutral-950/95 backdrop-blur">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
         <div className="flex flex-col gap-3 text-neutral-200 text-sm">
-          <a href="/#work" onClick={() => setMobileOpen(false)} className="py-2 border-b border-neutral-800/60">Work</a>
-          <a href="/about" onClick={() => setMobileOpen(false)} className="py-2 border-b border-neutral-800/60">About</a>
+          <Link to="/work" onClick={() => setMobileOpen(false)} className="py-2 border-b border-neutral-800/60">Work</Link>
+          <Link to="/about" onClick={() => setMobileOpen(false)} className="py-2 border-b border-neutral-800/60">About</Link>
           <a href="/#services" onClick={() => setMobileOpen(false)} className="py-2 border-b border-neutral-800/60">Services</a>
           <a href="/#contact" onClick={() => setMobileOpen(false)} className="py-2">Contact</a>
           <a
@@ -90,6 +90,7 @@ export default function FodFilms() {
     </div>
   )}
 </header>
+
 
      {/* Hero — ember version (image only, no text overlay) */}
 <section id="home" className="relative overflow-hidden bg-black">
