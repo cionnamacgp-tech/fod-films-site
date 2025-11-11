@@ -7,45 +7,73 @@ export default function AboutPage() {
     <div className="min-h-screen bg-neutral-950 text-neutral-100 antialiased">
       {/* Navbar */}
       <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-neutral-950/70 bg-neutral-950/90 border-b border-neutral-800">
-        {/* ... full navbar code from homepage ... */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="h-16 flex items-center justify-between">
+            {/* Logo / Brand */}
+            <a href="/" className="flex items-center gap-2 group">
+              <span className="relative inline-block">
+                <span className="pointer-events-none absolute inset-0 rounded-full bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.45)_0%,rgba(212,175,55,0.18)_40%,transparent_70%)] blur-md" />
+                <img
+                  src="/logo-fod-circle.png"
+                  alt="Fód Films logo"
+                  className="relative h-12 w-12 md:h-14 md:w-14 shrink-0 ring-1 ring-white/20 object-contain p-1 bg-neutral-900 rounded-full"
+                />
+              </span>
+              <span className="text-lg font-semibold tracking-wide text-white mix-blend-exclusion group-hover:opacity-90">
+                Fód Films
+              </span>
+            </a>
+
+            {/* Desktop Nav */}
+            <nav className="hidden md:flex items-center gap-6 text-sm text-neutral-300">
+              <a href="/#work" className="hover:text-white">Work</a>
+              <a href="/about" className="hover:text-white">About</a>
+              <a href="/#services" className="hover:text-white">Services</a>
+              <a href="/#contact" className="hover:text-white">Contact</a>
+            </nav>
+
+            {/* Desktop CTA */}
+            <a
+              href="/#contact"
+              className="hidden md:inline-flex items-center rounded-xl bg-white/10 hover:bg-white/15 transition px-4 py-2 text-sm"
+            >
+              Start a project
+            </a>
+
+            {/* Mobile hamburger */}
+            <button
+              className="md:hidden inline-flex items-center justify-center h-10 w-10 rounded-lg border border-neutral-700 hover:bg-white/5"
+              aria-label="Open menu"
+              onClick={() => setMobileOpen((v) => !v)}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5 text-neutral-200">
+                <path fillRule="evenodd" d="M3.75 6.75h16.5v1.5H3.75v-1.5Zm0 4.5h16.5v1.5H3.75v-1.5Zm0 4.5h16.5v1.5H3.75v-1.5Z" clipRule="evenodd" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile menu panel */}
+        {mobileOpen && (
+          <div className="md:hidden border-t border-neutral-800 bg-neutral-950/95 backdrop-blur">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+              <div className="flex flex-col gap-3 text-neutral-200 text-sm">
+                <a href="/#work" onClick={() => setMobileOpen(false)} className="py-2 border-b border-neutral-800/60">Work</a>
+                <a href="/about" onClick={() => setMobileOpen(false)} className="py-2 border-b border-neutral-800/60">About</a>
+                <a href="/#services" onClick={() => setMobileOpen(false)} className="py-2 border-b border-neutral-800/60">Services</a>
+                <a href="/#contact" onClick={() => setMobileOpen(false)} className="py-2">Contact</a>
+                <a
+                  href="/#contact"
+                  onClick={() => setMobileOpen(false)}
+                  className="mt-2 inline-flex items-center justify-center rounded-xl bg-white/10 hover:bg-white/15 transition px-4 py-2"
+                >
+                  Start a project
+                </a>
+              </div>
+            </div>
+          </div>
+        )}
       </header>
-
-      {/* About section content below */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24 font-serif leading-relaxed">
-        <h1 className="text-3xl sm:text-5xl font-bold mb-10">About Fód Films</h1>
-        {/* rest of your about text */}
-      </div>
-    </div>
-  );
-}
-
-
-      {/* Page content */}
-      <main className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24 font-serif leading-relaxed">
-      {/* Ember background intro */}
-<section className="relative overflow-hidden mb-16">
-  {/* blurred hero image as background */}
-  <div className="absolute inset-0">
-    <img
-      src="/hero/hero-mobile-ember.webp"
-      alt="Ember background"
-      className="w-full h-full object-cover opacity-60 blur-[40px] scale-110"
-    />
-    {/* lighter overlay so color shines through */}
-    <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/50 to-neutral-950/90" />
-  </div>
-
-  {/* content */}
-  <div className="relative z-10 py-24 text-center px-4 sm:px-6">
-    <h1 className="text-4xl sm:text-6xl font-extrabold text-white mb-6 drop-shadow-lg">
-      About Fód Films
-    </h1>
-    <p className="text-lg sm:text-xl text-neutral-200 max-w-2xl mx-auto">
-      Rooted in story. Grounded in truth. Grown from something real.
-    </p>
-  </div>
-</section>
-
 
 
 
