@@ -42,7 +42,17 @@ export default function AboutPage() {
 
       {/* Page content */}
       <main className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24 font-serif leading-relaxed">
-        <h1 className="text-3xl sm:text-5xl font-bold mb-10">About Fód Films</h1>
+        {/* Ember intro section */}
+<section className="relative rounded-2xl overflow-hidden mb-16">
+  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_center,rgba(212,175,55,0.15)_0%,rgba(212,175,55,0.05)_40%,transparent_80%)] pointer-events-none" />
+  <div className="relative z-10 py-20 text-center">
+    <h1 className="text-4xl sm:text-6xl font-extrabold text-white mb-6">About Fód Films</h1>
+    <p className="text-lg sm:text-xl text-neutral-300 max-w-2xl mx-auto">
+      Rooted in story. Grounded in truth. Growing from something real.
+    </p>
+  </div>
+</section>
+
 
         <p className="text-neutral-300 text-lg">
           Fód means sod in Irish — the ground beneath us. It reflects what we value:
