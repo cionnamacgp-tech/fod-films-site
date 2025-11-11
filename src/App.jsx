@@ -149,9 +149,6 @@ export default function FodFilms() {
   </a>
 </div>
 
-  </div>
-</section>
-
 {/* About (short) */}
 <section id="about" className="border-b border-neutral-900 bg-neutral-950">
   <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
