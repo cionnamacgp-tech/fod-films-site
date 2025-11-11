@@ -11,7 +11,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <Routes>
       <Route path="/" element={<FodFilms />} />
       <Route path="/about" element={<AboutPage />} />
-      <Route path="/work" element={<WorkPage />} />
+<Route path="/work" element={<WorkPage />} />
     </Routes>
   </Router>
 );
