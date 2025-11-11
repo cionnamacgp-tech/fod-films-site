@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import FodFilms from "./App";
 import AboutPage from "./AboutPage";
+import WorkPage from "./WorkPage";
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
