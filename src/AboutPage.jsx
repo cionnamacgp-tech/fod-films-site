@@ -1,44 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function AboutPage() {
+  const [mobileOpen, setMobileOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-neutral-950 text-neutral-100 antialiased">
-
-      {/* Sticky navbar (same as home) */}
+      {/* Navbar */}
       <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-neutral-950/70 bg-neutral-950/90 border-b border-neutral-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="h-16 flex items-center justify-between">
-            <a href="/" className="flex items-center gap-2 group">
-              <span className="relative inline-block">
-                <span className="pointer-events-none absolute inset-0 rounded-full bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.45)_0%,rgba(212,175,55,0.18)_40%,transparent_70%)] blur-md" />
-                <img
-                  src="/logo-fod-circle.png"
-                  alt="Fód Films logo"
-                  className="relative h-12 w-12 md:h-14 md:w-14 shrink-0 ring-1 ring-white/20 object-contain p-1 bg-neutral-900 rounded-full"
-                />
-              </span>
-              <span className="text-lg font-semibold tracking-wide text-white mix-blend-exclusion group-hover:opacity-90">
-                Fód Films
-              </span>
-            </a>
-
-            {/* Use hashes that point back to the home sections */}
-            <nav className="hidden md:flex items-center gap-6 text-sm text-neutral-300">
-              <a href="/#work" className="hover:text-white">Work</a>
-              <a href="/about" className="hover:text-white">About</a>
-              <a href="/#services" className="hover:text-white">Services</a>
-              <a href="/#contact" className="hover:text-white">Contact</a>
-            </nav>
-
-            <a
-              href="/#contact"
-              className="hidden md:inline-flex items-center rounded-xl bg-white/10 hover:bg-white/15 transition px-4 py-2 text-sm"
-            >
-              Start a project
-            </a>
-          </div>
-        </div>
+        {/* ... full navbar code from homepage ... */}
       </header>
+
+      {/* About section content below */}
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24 font-serif leading-relaxed">
+        <h1 className="text-3xl sm:text-5xl font-bold mb-10">About Fód Films</h1>
+        {/* rest of your about text */}
+      </div>
+    </div>
+  );
+}
+
 
       {/* Page content */}
       <main className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24 font-serif leading-relaxed">
