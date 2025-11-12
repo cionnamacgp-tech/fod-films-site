@@ -1,8 +1,12 @@
-
 {
   "redirects": [
-    { "source": "https://www.fodfilms.ie/:path*", "destination": "https://fodfilms.ie/:path*", "permanent": true },
-    { "source": "http://fodfilms.ie/:path*", "destination": "https://fodfilms.ie/:path*", "permanent": true }
+    {
+      "source": "/(.*)",
+      "destination": "https://fodfilms.ie/$1",
+      "has": [
+        { "type": "host", "value": "www.fodfilms.ie" }
+      ],
+      "permanent": true
+    }
   ]
 }
-
