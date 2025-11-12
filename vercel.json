@@ -2,9 +2,7 @@
   "redirects": [
     {
       "source": "/(.*)",
-      "has": [
-        { "type": "host", "value": "www.fodfilms.ie" }
-      ],
+      "has": [{ "type": "host", "value": "www.fodfilms.ie" }],
       "destination": "https://fodfilms.ie/:path*",
       "permanent": true
     }
