@@ -3,4 +3,10 @@
     { "source": "/(.*)", "destination": "/" }
   ]
 }
+{
+  "redirects": [
+    { "source": "https://www.fodfilms.ie/:path*", "destination": "https://fodfilms.ie/:path*", "permanent": true },
+    { "source": "http://fodfilms.ie/:path*", "destination": "https://fodfilms.ie/:path*", "permanent": true }
+  ]
+}
 
