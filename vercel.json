@@ -2,10 +2,10 @@
   "redirects": [
     {
       "source": "/(.*)",
-      "destination": "https://fodfilms.ie/$1",
       "has": [
         { "type": "host", "value": "www.fodfilms.ie" }
       ],
+      "destination": "https://fodfilms.ie/:path*",
       "permanent": true
     }
   ]
